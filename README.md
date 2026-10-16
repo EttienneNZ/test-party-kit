@@ -34,6 +34,9 @@ installs three things into that repo:
 
 This repo is both a Claude Code plugin and its own marketplace. You need read access to it.
 
+> Until it's transferred into `Entelect-Australasia`, this repo lives at
+> `EttienneNZ/test-party-kit`; use that path in the first command below.
+
 ```bash
 claude plugin marketplace add Entelect-Australasia/test-party-kit
 ```
