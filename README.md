@@ -1,6 +1,6 @@
 # test-party-kit
 
-A Claude Code plugin that sets up **manual QA test plans** and **git-tracked Test Parties** in
+A Claude Code plugin that sets up **manual or automated QA test plans** and **git-tracked Test Parties** in
 any repository. It has one skill, `installing-test-parties`. You run it once per repo, and it
 installs three things into that repo:
 
