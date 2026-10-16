@@ -1,0 +1,49 @@
+{
+  "product": "Acme Portal",
+  "environment": "staging",
+  "remote": "origin",
+  "base_branch": "main",
+  "plans_dir": "docs/test-plans",
+  "parties_dir": "docs/test-parties",
+  "issue_tracker": "Jira project ACME, through the Atlassian MCP tools",
+  "bug_conventions": "docs/agents/issue-tracker.md",
+  "glossary": "GLOSSARY.md",
+  "limitations": null,
+  "session_cases": 5,
+  "commit_env": {"HUSKY": "0"},
+  "build": {"github_deploy": {"workflow": "deploy.yml", "title_contains": "(staging)"}},
+  "build_note": "the deploy SHA is the latest successful staging run of deploy.yml",
+  "baseline": "the tester is signed in to https://staging.acme.test as a regular member of the QA org, with default settings",
+  "ci_check": true,
+  "tips": ["**Staging:** https://staging.acme.test", "**Admin console:** https://staging.acme.test/admin (needs the QA admin account)"],
+  "automation": {
+    "e2e_dir": "e2e",
+    "setup_helpers": "stripe\\w*\\.ts",
+    "setup_label": "Stripe",
+    "transient_errors": ["Too many requests"],
+    "transient_label": "a rate limit",
+    "personas": [
+      {
+        "name": "member",
+        "holds": "a regular member of the QA org, signed in to the portal",
+        "port": 9301,
+        "signInUrls": ["https://staging.acme.test/login"],
+        "homeUrl": "https://staging.acme.test/",
+        "signedOutUrl": "/login",
+        "account": {"email": "qa-member@acme.test", "org": "QA"}
+      },
+      {
+        "name": "admin",
+        "holds": "an admin of the QA org",
+        "port": 9302,
+        "signInUrls": ["https://staging.acme.test/login"],
+        "homeUrl": "https://staging.acme.test/admin",
+        "signedOutUrl": "/login",
+        "account": {"email": "qa-admin@acme.test", "org": "QA"}
+      }
+    ],
+    "blocked": [
+      {"needs": "a user in a different org", "note": "needs an outsider persona"}
+    ]
+  }
+}

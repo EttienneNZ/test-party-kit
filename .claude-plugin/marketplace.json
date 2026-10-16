@@ -1,0 +1,16 @@
+{
+  "name": "test-party-kit",
+  "owner": {
+    "name": "Ettienne Mans"
+  },
+  "metadata": {
+    "description": "Manual QA test plans and git-tracked Test Parties for any repo."
+  },
+  "plugins": [
+    {
+      "name": "test-party-kit",
+      "source": "./",
+      "description": "Installs write-test-plan, test-party and party.py into any repo, with optional Playwright Case Spec automation."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "test-party-kit",
+  "description": "Installs journey-shaped manual test plans and git-tracked Test Parties (write-test-plan, test-party, party.py) into any repo, with optional Playwright Case Spec automation.",
+  "version": "0.1.0",
+  "author": { "name": "Ettienne Mans" }
+}

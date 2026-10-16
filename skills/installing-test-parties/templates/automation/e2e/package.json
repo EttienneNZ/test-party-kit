@@ -1,0 +1,21 @@
+{
+  "name": "{{E2E_PACKAGE}}",
+  "version": "0.0.0-development",
+  "description": "Case Specs: Playwright replays of Test Cases against {{ENVIRONMENT}}, in signed-in persona browsers",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "browsers": "node src/launch.ts",
+    "preflight": "node src/preflight.ts",
+    "specs": "playwright test",
+    "cases": "node src/listCases.ts",
+    "mcp": "node src/mcpServers.ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
